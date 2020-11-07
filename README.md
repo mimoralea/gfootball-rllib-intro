@@ -6,14 +6,13 @@ To install docker, I recommend a web search for "installing docker on \<your os 
 
 ## Running the code
   0. Clone this repo:
-  `git clone --depth 1 https://github.gatech.edu/mmorales34/rldm.git && cd rldm`
+  `git clone --depth 1 https://www.github.com/mimoralea/gfootball-intro.git && cd gfootball-intro`
   1. Pull the rldm image with:
-  `docker pull mimoralea/rldm:v0.3`
+  `docker pull mimoralea/rldm:v0.4`
   2. Spin up a container:
      - On Mac or Linux:
-     `docker run -it --rm -p 8888:8888 -v "$PWD"/notebooks/:/mnt/notebooks/ mimoralea/rldm:v0.3`
+     `docker run -it --rm --shm-size="10GB" -p 8888:8888 -p 6006:6006 -p 8265:8265 -v "$PWD"/notebooks/:/mnt/notebooks/ mimoralea/rldm:v0.4`
      - On Windows:
-     `docker run -it --rm -p 8888:8888 -v %CD%/notebooks/:/mnt/notebooks/ mimoralea/rldm:v0.3`
+     `docker run -it --rm --shm-size="10GB" -p 8888:8888 -p 6006:6006 -p 8265:8265 -v %CD%/notebooks/:/mnt/notebooks/ mimoralea/rldm:v0.4`
      - NOTE: Use `nvidia-docker` if you are using a GPU.
-  3. Open a browser and go to the URL shown in the terminal (likely to be: http://localhost:8888). The password is: `rldm`
-
+  3. Open a browser and go to the URL shown in the terminal (likely to be: http://localhost:8888). The password is: `rldm`, Tensorboard is http://localhost:6006, Ray Dashboard is http://localhost:8265.
